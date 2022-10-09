@@ -28,12 +28,15 @@ function App() {
 
   function updateFields(fields){
     console.log(data)
+
     setData(prev=>{
       return {...prev,...fields}
     })
 
+
   }
-  const { steps, currentStepIndex, step, back, next, isFirstStep, isLastStep } =
+
+  const { steps,step, currentStepIndex, currentFormInputs, back, next, isFirstStep,goToStep, isLastStep } =
     useMultiStep([
       <UserForm {...data} updateFields={updateFields} />,
       <AccountForm {...data} updateFields={updateFields} />,
@@ -43,20 +46,24 @@ function App() {
   function onSubmitHandler(e) {
     e.preventDefault();
     if(!isLastStep) return next()
-    alert('account created succesfully')
+    alert('account created successfully')
   }
-  console.log(step);
+  console.log(currentFormInputs);
   return (
     <div className="grid-center">
       {/* <DropdownSearch/> */}
-      <h1>form multistep</h1>
-      <Stepper activeStep={currentStepIndex}/>
+      <h1>form multi step</h1>
+
+      <Stepper goTo={goToStep} activeStep={currentStepIndex}/>
+
       <section className="card">
         <form>
           <div>
-            {currentStepIndex + 1}/{steps.length}
+            {step}/{steps}
           </div>
-          {step}
+          
+          {currentFormInputs}
+
           {isFirstStep ? null : (
             <button type="button" onClick={back}>
               back

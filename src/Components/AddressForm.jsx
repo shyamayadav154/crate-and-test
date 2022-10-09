@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function AddressForm() {
   return (
-    <>
+    <div className='grid-cols-2'>
         <label htmlFor="">Address</label>
         <input type="text" />
         <label htmlFor="">City</label>
@@ -12,6 +12,6 @@ export default function AddressForm() {
         <label htmlFor="">Zip Code</label>
         <input type="text" />
         
-    </>
+    </div>
   )
 }

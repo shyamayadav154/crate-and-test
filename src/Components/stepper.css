@@ -16,6 +16,7 @@
 
 .timeline-title{
     position: absolute;
+    top: -20px;
 }
 
 
@@ -36,7 +37,7 @@
     height: 5px;
     display: flex;
     width: 100%;
-    background-color: gray;
+    background: gray;
 }
 
 .active{

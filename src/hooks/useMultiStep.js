@@ -18,14 +18,16 @@ export default function useMultiStep(steps) {
     });
   }
 
-  function gotoStep(index) {
+  function goToStep(index) {
     setCurrentStepIndex(index);
+    console.log('hi there')
   }
   return {
     currentStepIndex,
-    step: steps[currentStepIndex],
-    steps,
-    gotoStep,
+    step: currentStepIndex+1,
+    currentFormInputs: steps[currentStepIndex],
+    steps:steps.length,
+    goToStep,
     next,
     back,
     isFirstStep: currentStepIndex === 0,

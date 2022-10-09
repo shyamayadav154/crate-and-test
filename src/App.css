@@ -1,3 +1,14 @@
+:root{
+    
+}
+
+
+
+
+
+
+
+
 .grid-center {
     height: 50vh;
     display: grid;
@@ -9,4 +20,16 @@
     border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
+}
+
+.grid-cols-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function AccountForm() {
+export default function AccountForm({}) {
   return (
-    <>
+    <div className='grid-cols-2'>
         <label htmlFor="">Account Name</label>
         <input type="text" />
         <label htmlFor="">Account No.</label>
@@ -12,6 +12,6 @@ export default function AccountForm() {
         <label htmlFor="">Account Type</label>
         <input type="text" />
         
-    </>
+    </div>
   )
 }
