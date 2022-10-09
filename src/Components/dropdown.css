@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    gap: 10px;
+}
+
+.dd-container{
+    position: relative;
+
+}
+
+.fix-width{
+    display: block;
+    width: 100%;
+    
+}
+
+.dropdown-list{
+    position: absolute;
+    border:1px solid black;
+    padding: 2px;
+    margin-top: 2px;
+    width: 100%;
+}
+
+.dropdown-item{
+
+}
+
+.dropdown-item:hover{
+    background-color: black;
+    color: white;
+}
+
+.arrow{
+   user-select: none;
+}

@@ -1,0 +1,44 @@
+
+.timelines{
+    display: flex;
+    align-items:center;
+    min-width: 800px;
+    
+}
+
+.timeline{
+    position: relative;
+    /* margin-bottom: 6px; */
+    list-style: none;
+    /* width: 100%; */
+   
+}
+
+.timeline-title{
+    position: absolute;
+}
+
+
+.flex-item-center{
+    display: flex;
+    align-items: center;
+   
+}
+
+.circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.line{
+    height: 5px;
+    display: flex;
+    width: 100%;
+    background-color: gray;
+}
+
+.active{
+    background-color: black;
+}

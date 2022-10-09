@@ -1,0 +1,12 @@
+.grid-center {
+    height: 50vh;
+    display: grid;
+    place-items: center;
+}
+
+
+.card{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
