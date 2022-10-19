@@ -1,12 +1,10 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import DropdownSearch from "./Components/DropdownSearch";
-import useMultiStep from "./hooks/useMultiStep";
-import AddressForm from "./Components/AddressForm";
-import UserForm from "./Components/UserForm";
+import "./App.scss";
 import AccountForm from "./Components/AccountForm";
-import Stepper from "./Components/Stepper";
+import AddressForm from "./Components/AddressForm";
+import TabSidebar from "./Components/TabSidebar";
+import UserTabs from "./Components/UserTabs";
+import useTabs from "./hooks/useTabs";
 
 const INITAL_DATA = {
   firstName: "",
@@ -23,59 +21,46 @@ const INITAL_DATA = {
   zipCode: "",
 };
 
+const topButton = [
+  { id: 1, name: "Add User", icon: "user" },
+  { id: 2, name: "All Users & Permission", icon: "All User" },
+];
+
 function App() {
   const [data, setData] = useState(INITAL_DATA);
 
-  function updateFields(fields){
-    console.log(data)
+  function updateFields(fields) {
+    console.log(data);
 
-    setData(prev=>{
-      return {...prev,...fields}
-    })
-
-
+    setData((prev) => {
+      return { ...prev, ...fields };
+    });
   }
 
-  const { steps,step, currentStepIndex, currentFormInputs, back, next, isFirstStep,goToStep, isLastStep } =
-    useMultiStep([
-      <UserForm {...data} updateFields={updateFields} />,
-      <AccountForm {...data} updateFields={updateFields} />,
-      <AddressForm {...data} updateFields={updateFields} />,
-    ]);
+  // const { steps,step, currentStepIndex, currentFormInputs, back, next, isFirstStep,goToStep, isLastStep } =
+  //   useMultiStep([
+  //     <UserForm {...data} updateFields={updateFields} />,
+  //     <AccountForm {...data} updateFields={updateFields} />,
+  //     <AddressForm {...data} updateFields={updateFields} />,
+  //   ]);
 
-  function onSubmitHandler(e) {
-    e.preventDefault();
-    if(!isLastStep) return next()
-    alert('account created successfully')
-  }
-  console.log(currentFormInputs);
+  const [headButton, setHeadButton] = useState(topButton[0]);
+
+  const { goTo, currentTab, tabs, currentStepIndex } = useTabs(
+    [<UserTabs />, <AccountForm />, <AddressForm />],
+    ["User", "Account", "Address"]
+  );
+  console.log(tabs);
   return (
-    <div className="grid-center">
-      {/* <DropdownSearch/> */}
-      <h1>form multi step</h1>
-
-      <Stepper goTo={goToStep} activeStep={currentStepIndex}/>
-
-      <section className="card">
-        <form>
-          <div>
-            {step}/{steps}
-          </div>
-          
-          {currentFormInputs}
-
-          {isFirstStep ? null : (
-            <button type="button" onClick={back}>
-              back
-            </button>
-          )}
-
-          <button type="submit" onClick={onSubmitHandler}>
-            {isLastStep ? "submit" : "next"}
-          </button>
-        </form>
-      </section>
-    </div>
+    <>
+      <TabSidebar currentStepIndex={currentStepIndex} tabs={tabs} goTo={goTo} />
+      <main className="container-with-sidebar">
+        <div className="">
+          {/* <UserTabs /> */}
+          <div style={{display:"flex",justifyContent:"center"}}>{currentTab}</div>
+        </div>
+      </main>
+    </>
   );
 }
 

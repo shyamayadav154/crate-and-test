@@ -1,0 +1,32 @@
+
+
+.button{
+    // background-color: var(--secondary-color);
+    // color: white;
+    padding: 10px;
+   border-radius: var(--rounded-md);
+    border: none;
+    cursor: pointer;
+
+    &--round{
+
+        border-radius: var(--rounded-full);
+    }
+
+    
+    &--primary{
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    &--outline{
+        background-color: transparent;
+        border: 1px solid var(--secondary-color);
+        color: var(--secondary-color);
+    }
+
+   
+    
+    
+
+}

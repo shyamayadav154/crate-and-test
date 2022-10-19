@@ -1,0 +1,71 @@
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/grayDark.css";
+@import "@radix-ui/colors/blueDark.css";
+@import "@radix-ui/colors/greenDark.css";
+@import "@radix-ui/colors/redDark.css";
+
+:root{
+    --primary-color: #25263A;
+    --secondary-color:#E5AC36;
+    --tertiary-color:#ED2D69;
+
+
+    --border-form:#00000029; /* 29 is the opacity & input and button border color */
+   
+    --text-gray:#A9ABAE;
+
+
+    --rounded-sm: 2px;
+    --rounded: 4px;
+    --rounded-md:6px;
+    --rounded-lg: 8px;
+    --rounded-input:12px;
+    --rounded-full: 9999px;
+
+
+    --input-border-color:#A9ABAE;
+
+    --scroll-bar-color: #c5c5c5;
+        --scroll-bar-bg-color: #f6f6f6;
+
+
+}
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.opacity-0{
+    opacity: 0;
+    
+}
+
+.opacity-100{
+    opacity: 1;
+
+   
+}
+
+ /* debugging classes */
+ 
+.outline{
+    border: 1px solid black;
+}
+
+.outline-r {
+    border: 1px solid red;
+}
+
+
+.outline-b{
+    border: 1px solid blue;
+}
+
+.outline-g{
+    border: 1px solid green;
+}

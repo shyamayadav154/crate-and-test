@@ -1,0 +1,84 @@
+.dropdown {
+  &__button {
+    color: var(--text-gray);
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--rounded-input);
+    background-color: inherit;
+    border: 2px solid var(--input-border-color);
+    outline: none;
+    font-size: 18px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: white;
+  }
+
+  &--selected {
+    color: white;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__options {
+    margin:2 auto;
+    margin-top: 3px;
+    border-radius: var(--rounded-lg);
+    background-color: #727376;
+    border: 1px solid var(--input-border-color);
+    position: absolute;
+   width: 100%;
+    overflow: auto;
+    max-height: 200px;
+    scrollbar-width: thin;
+    z-index: 10;
+    .active{
+      background-color: white;
+    }
+
+    //scrollbar  styles for all browser
+    
+     scrollbar-width: thin;
+        scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+
+        &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    // &::-webkit-scrollbar-track {
+        // background: var(--scroll-bar-bg-color);
+    // }
+
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scroll-bar-color);
+        border-radius: 20px;
+        border: 0px solid var(--scroll-bar-bg-color);
+    }
+  }
+  li {
+    list-style: none;
+  }
+
+  &__option {
+    padding: 10px;
+    text-align: center;
+
+ 
+    &.s{
+      font: 500;
+    }
+  
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+    }
+  }
+}

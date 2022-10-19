@@ -1,0 +1,22 @@
+// .tab-sidebar{
+//    posit
+// }
+
+.tab-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 270px;
+  border-right: 1px solid var(--text-gray);
+  z-index: 100;
+  background-color: #303147;
+
+  &__container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}

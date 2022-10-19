@@ -1,0 +1,57 @@
+.user-tabs {
+    // margin-left: 300px;
+   
+
+  &__head-btns {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__form {
+    border: 1px solid var(--text-gray);
+    padding: 30px;
+    border-radius: var(--rounded-input);
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .table-container {
+    width: 900px;
+    overflow-x: auto;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid var(--text-gray);
+      border-radius: var(--rounded-input);
+      overflow-x: auto;
+      thead {
+        background-color: var(--primary-color);
+        color: white;
+        th {
+          padding: 10px;
+          border: 1px solid var(--text-gray);
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 10px;
+            border: 1px solid var(--text-gray);
+            color: var(--text-gray);
+          }
+        }
+      }
+    }
+  }
+}
