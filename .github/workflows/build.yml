@@ -17,7 +17,7 @@ jobs:
          docker login -u shyamayadav154 -p Shyam@154
          
       - name: docker build
-        run : docker build . --file Dockerfile --tag test:$(date +%s)
+        run : docker build . --file Dockerfile --tag shyamayadav154/test:$(date +%s)
         
       - name: docker push  
         run: |
