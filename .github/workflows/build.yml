@@ -10,11 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: docker login
-        env:
-         DOCKER_USER: shyamayadav154
-         DOCKER_PASS: Shyam@154
+        # env:
+        #  DOCKER_USER: shyamayadav154
+        #  DOCKER_PASS: Shyam@154
         run: |
-         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+         docker login -u shyamayadav154 -p Shyam@154
          
       - name: docker build
         run : docker build . --file Dockerfile --tag test:$(date +%s)
