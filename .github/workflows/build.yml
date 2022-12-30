@@ -15,4 +15,4 @@ jobs:
       - name: Build the Docker image
         run: docker build -t myimage:latest .
       - name: Push the Docker image
-        run: docker push myimage:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}myimage:latest
