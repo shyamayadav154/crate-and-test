@@ -1,17 +1,25 @@
-# github action two build docker image on pull or push request on dev and main branch
-
 name: Docker Image CI
 
 on:
   push:
-    branches: [dev, main]
-  pull_request:
-    branches: [dev, main]
-
+    branches:
+      - dev
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag test-image-name:$(date +%s)
+      - name: docker login
+        env:
+         DOCKER_USER: shyamayadav154
+         DOCKER_PASS: Shyam@154
+        run: |
+         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+         
+      - name: docker build
+        run : docker build . --file Dockerfile --tag test:$(date +%s)
+        
+      - name: docker push  
+        run: |
+         docker push shyamayadav154/test:$(date +%s)
+        
