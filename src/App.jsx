@@ -44,12 +44,13 @@ function App() {
   //     <AddressForm {...data} updateFields={updateFields} />,
   //   ]);
 
-  const [headButton, setHeadButton] = useState(topButton[0]);
+  // const [headButton, setHeadButton] = useState(topButton[0]);
 
   const { goTo, currentTab, tabs, currentStepIndex } = useTabs(
     [<UserTabs />, <AccountForm />, <AddressForm />],
     ["User", "Account", "Address"]
   );
+  
   console.log(tabs);
   return (
     <>
