@@ -16,7 +16,10 @@ jobs:
           username: shyamayadav154
           password: Shyam@154
       - name: Build the Docker image
-        run: docker build -t shyamayadav154/myimage:latest .
+        run: |
+          docker build -t myimage:latest .
+          docker tag myimage:latest shyamayadav154/myimage:latest
+
       - name: Push the Docker image
         run: docker push shyamayadav154/myimage:latest
 # After adding secrets in github repo,
