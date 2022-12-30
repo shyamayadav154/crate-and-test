@@ -15,13 +15,11 @@ jobs:
         with:
           username: shyamayadav154
           password: Shyam@154
-      - name: Build the Docker image
-        run: |
-          docker build -t myimage:latest .
-          docker tag myimage:latest shyamayadav154/myimage:latest
-
-      - name: Push the Docker image
-        run: docker push shyamayadav154/myimage:latest
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: shyamayadav154/myapp:latest
 # After adding secrets in github repo,
 # comment out env, and replace $DOCKER_USERNAME with ${{ secrets.DOCKER_USERNAME }} and $DOCKER_PASSWORD with ${{ secrets.DOCKER_PASSWORD }}
 #
