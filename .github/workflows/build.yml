@@ -1,0 +1,22 @@
+name: Build and Push Docker Image
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to Docker
+        uses: docker/login-action@v2
+        # env:
+        #   DOCKER_USERNAME: shyamayadav154
+        #   DOCKER_PASSWORD: Shyam@154
+        with:
+          username: shyamayadav154
+          password: Shyam@154
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: shyamayadav154/myapp:latest
