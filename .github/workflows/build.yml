@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: shyamayadav154/mevfinal-dev:latest
+          tags: shyamayadav154/create-and-test:latest
           cache-from: type=registry,ref=shyamayadav154/app:buildcache
           cache-to: type=registry,ref=shyamayadav154/app:buildcache,mode=max
 
