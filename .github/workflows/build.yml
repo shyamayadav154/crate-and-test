@@ -1,22 +1,16 @@
-name: Build and Push Docker Image
+name: build and push image to docker hub
 
 on: [push]
 
 jobs:
-  build:
+  build-dh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Login to Docker
-        uses: docker/login-action@v2
-        # env:
-        #   DOCKER_USERNAME: shyamayadav154
-        #   DOCKER_PASSWORD: Shyam@154
+      - uses: actions/checkout@v1
+      - uses: whoan/docker-build-with-cache-action@v5
         with:
           username: shyamayadav154
           password: Shyam@154
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: shyamayadav154/myapp:latest
+          image_name: hello-world
+          push_git_tag: true
+      
