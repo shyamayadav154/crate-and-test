@@ -11,5 +11,5 @@ jobs:
         with:
           username: shyamayadav154
           password: Shyam@154
-          image_name: hello-world
+          image_name: create-and-test
       
