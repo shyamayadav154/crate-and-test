@@ -12,5 +12,4 @@ jobs:
           username: shyamayadav154
           password: Shyam@154
           image_name: hello-world
-          push_git_tag: true
       
